@@ -1,0 +1,459 @@
+|psudo
+A <= seven_seg_decoder:inst12.A
+enable => 8bit:inst0.enable
+enable => Statemachine:inst1.Enable
+seed1 => 8bit:inst0.seed1
+seed4 => 8bit:inst0.seed4
+seed5 => 8bit:inst0.seed5
+seed6 => 8bit:inst0.seed6
+seed7 => 8bit:inst0.seed7
+seed2 => 8bit:inst0.seed2
+seed3 => 8bit:inst0.seed3
+seed0 => 8bit:inst0.seed0
+clk => Debouncer:inst5.Clock
+2bitEnbl => 2bitcounter:inst.input
+B <= seven_seg_decoder:inst12.B
+C <= seven_seg_decoder:inst12.C
+D <= seven_seg_decoder:inst12.D
+E <= seven_seg_decoder:inst12.E
+F <= seven_seg_decoder:inst12.F
+G <= seven_seg_decoder:inst12.G
+A1 <= seven_seg_decoder:inst13.A
+B1 <= seven_seg_decoder:inst13.B
+C1 <= seven_seg_decoder:inst13.C
+D1 <= seven_seg_decoder:inst13.D
+E1 <= seven_seg_decoder:inst13.E
+F1 <= seven_seg_decoder:inst13.F
+G1 <= seven_seg_decoder:inst13.G
+A2 <= seven_seg_decoder:inst14.A
+B2 <= seven_seg_decoder:inst14.B
+C2 <= seven_seg_decoder:inst14.C
+D2 <= seven_seg_decoder:inst14.D
+E2 <= seven_seg_decoder:inst14.E
+F2 <= seven_seg_decoder:inst14.F
+G2 <= seven_seg_decoder:inst14.G
+A3 <= seven_seg_decoder:inst15.A
+B3 <= seven_seg_decoder:inst15.B
+C3 <= seven_seg_decoder:inst15.C
+D3 <= seven_seg_decoder:inst15.D
+E3 <= seven_seg_decoder:inst15.E
+F3 <= seven_seg_decoder:inst15.F
+G3 <= seven_seg_decoder:inst15.G
+input => ~NO_FANOUT~
+
+
+|psudo|seven_seg_decoder:inst12
+A <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+B <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+C <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+D <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+E <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+F <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+G <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+Z => Decoder0.IN0
+Y => Decoder0.IN1
+X => Decoder0.IN2
+W => Decoder0.IN3
+
+
+|psudo|4bitreg:inst3
+out0 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clock => inst4.CLK
+clock => inst5.CLK
+clock => inst6.CLK
+clock => inst7.CLK
+seed0 => 2to1:inst2.x
+enable => 2to1:inst2.s
+enable => 2to1:inst.s
+enable => 2to1:inst1.s
+enable => 2to1:inst3.s
+out1 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+seed1 => 2to1:inst.x
+out2 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+seed2 => 2to1:inst1.x
+out3 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+seed3 => 2to1:inst3.x
+
+
+|psudo|4bitreg:inst3|2to1:inst2
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|4bitreg:inst3|2to1:inst
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|4bitreg:inst3|2to1:inst1
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|4bitreg:inst3|2to1:inst3
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|Statemachine:inst1
+out0 <= Q0.DB_MAX_OUTPUT_PORT_TYPE
+clk => Q0.CLK
+clk => Q3.CLK
+clk => Q2.CLK
+clk => Q1.CLK
+s => inst4.IN0
+s => inst32.IN0
+s => inst26.IN0
+s => inst37.IN0
+s => inst40.IN0
+s => inst29.IN2
+s => inst35.IN2
+s => inst20.IN2
+s => inst21.IN2
+Enable => inst1.IN0
+out1 <= Q1.DB_MAX_OUTPUT_PORT_TYPE
+out2 <= Q2.DB_MAX_OUTPUT_PORT_TYPE
+out3 <= Q3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|psudo|8bit:inst0
+out <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst8.CLK
+CLK => inst7.CLK
+CLK => inst6.CLK
+CLK => inst5.CLK
+CLK => inst4.CLK
+CLK => inst3.CLK
+CLK => inst2.CLK
+CLK => inst1.CLK
+seed7 => 2to1:inst30.x
+enable => 2to1:inst30.s
+enable => 2to1:inst31.s
+enable => 2to1:inst32.s
+enable => 2to1:inst33.s
+enable => 2to1:inst34.s
+enable => 2to1:inst35.s
+enable => 2to1:inst36.s
+enable => 2to1:inst37.s
+seed6 => 2to1:inst31.x
+seed5 => 2to1:inst32.x
+seed4 => 2to1:inst33.x
+seed3 => 2to1:inst34.x
+seed2 => 2to1:inst35.x
+seed1 => 2to1:inst36.x
+seed0 => 2to1:inst37.x
+
+
+|psudo|8bit:inst0|2to1:inst30
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|8bit:inst0|2to1:inst31
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|8bit:inst0|2to1:inst32
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|8bit:inst0|2to1:inst33
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|8bit:inst0|2to1:inst34
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|8bit:inst0|2to1:inst35
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|8bit:inst0|2to1:inst36
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|8bit:inst0|2to1:inst37
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|Debouncer:inst5
+Out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+Clock => clock_divider_1024:inst1.CLK_IN
+In => inst2.DATAIN
+
+
+|psudo|Debouncer:inst5|clock_divider_1024:inst
+CLK_OUT <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+CLK_IN => inst1.CLK
+CLK_IN => inst2.CLK
+CLK_IN => inst3.CLK
+CLK_IN => inst4.CLK
+CLK_IN => inst5.CLK
+CLK_IN => inst6.CLK
+CLK_IN => inst7.CLK
+CLK_IN => inst8.CLK
+CLK_IN => inst9.CLK
+CLK_IN => inst10.CLK
+
+
+|psudo|Debouncer:inst5|clock_divider_1024:inst1
+CLK_OUT <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+CLK_IN => inst1.CLK
+CLK_IN => inst2.CLK
+CLK_IN => inst3.CLK
+CLK_IN => inst4.CLK
+CLK_IN => inst5.CLK
+CLK_IN => inst6.CLK
+CLK_IN => inst7.CLK
+CLK_IN => inst8.CLK
+CLK_IN => inst9.CLK
+CLK_IN => inst10.CLK
+
+
+|psudo|2bitcounter:inst
+out2 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+input => inst1.IN0
+input => inst.IN0
+clock => inst.CLK
+out1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|psudo|seven_seg_decoder:inst13
+A <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+B <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+C <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+D <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+E <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+F <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+G <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+Z => Decoder0.IN0
+Y => Decoder0.IN1
+X => Decoder0.IN2
+W => Decoder0.IN3
+
+
+|psudo|4bitreg:inst6
+out0 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clock => inst4.CLK
+clock => inst5.CLK
+clock => inst6.CLK
+clock => inst7.CLK
+seed0 => 2to1:inst2.x
+enable => 2to1:inst2.s
+enable => 2to1:inst.s
+enable => 2to1:inst1.s
+enable => 2to1:inst3.s
+out1 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+seed1 => 2to1:inst.x
+out2 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+seed2 => 2to1:inst1.x
+out3 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+seed3 => 2to1:inst3.x
+
+
+|psudo|4bitreg:inst6|2to1:inst2
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|4bitreg:inst6|2to1:inst
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|4bitreg:inst6|2to1:inst1
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|4bitreg:inst6|2to1:inst3
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|seven_seg_decoder:inst14
+A <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+B <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+C <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+D <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+E <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+F <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+G <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+Z => Decoder0.IN0
+Y => Decoder0.IN1
+X => Decoder0.IN2
+W => Decoder0.IN3
+
+
+|psudo|4bitreg:inst7
+out0 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clock => inst4.CLK
+clock => inst5.CLK
+clock => inst6.CLK
+clock => inst7.CLK
+seed0 => 2to1:inst2.x
+enable => 2to1:inst2.s
+enable => 2to1:inst.s
+enable => 2to1:inst1.s
+enable => 2to1:inst3.s
+out1 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+seed1 => 2to1:inst.x
+out2 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+seed2 => 2to1:inst1.x
+out3 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+seed3 => 2to1:inst3.x
+
+
+|psudo|4bitreg:inst7|2to1:inst2
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|4bitreg:inst7|2to1:inst
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|4bitreg:inst7|2to1:inst1
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|4bitreg:inst7|2to1:inst3
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|seven_seg_decoder:inst15
+A <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+B <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+C <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+D <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+E <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+F <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+G <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+Z => Decoder0.IN0
+Y => Decoder0.IN1
+X => Decoder0.IN2
+W => Decoder0.IN3
+
+
+|psudo|4bitreg:inst17
+out0 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clock => inst4.CLK
+clock => inst5.CLK
+clock => inst6.CLK
+clock => inst7.CLK
+seed0 => 2to1:inst2.x
+enable => 2to1:inst2.s
+enable => 2to1:inst.s
+enable => 2to1:inst1.s
+enable => 2to1:inst3.s
+out1 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+seed1 => 2to1:inst.x
+out2 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+seed2 => 2to1:inst1.x
+out3 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+seed3 => 2to1:inst3.x
+
+
+|psudo|4bitreg:inst17|2to1:inst2
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|4bitreg:inst17|2to1:inst
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|4bitreg:inst17|2to1:inst1
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|psudo|4bitreg:inst17|2to1:inst3
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+

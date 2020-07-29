@@ -1,0 +1,11 @@
+vendor_name = ModelSim
+source_file = 1, U:/CPRE281/Lab03/lab3step0.bdf
+source_file = 1, U:/CPRE281/Lab03/db/lab3step0.cmp.rdb
+source_file = 1, U:/CPRE281/Lab03/output_files/Chain1.cdf
+source_file = 1, U:/CPRE281/Lab03/db/lab3step0.cbx.xml
+design_name = lab3step0
+instance = comp, \Alram~output , Alram~output, lab3step0, 1
+instance = comp, \Goat~input , Goat~input, lab3step0, 1
+instance = comp, \Cabbage~input , Cabbage~input, lab3step0, 1
+instance = comp, \Wolf~input , Wolf~input, lab3step0, 1
+instance = comp, \inst7~0 , inst7~0, lab3step0, 1

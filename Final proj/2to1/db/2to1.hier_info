@@ -1,0 +1,8 @@
+|2to1
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+

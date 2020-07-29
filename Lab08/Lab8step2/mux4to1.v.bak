@@ -1,0 +1,10 @@
+module mux4to1 (a,b,c,d,s,f); 
+
+input(a,b,c,d,);
+input [1:0] s; 
+
+output f ; 
+
+assign f = s[1] ?(s[0]?d:c) :(s[1]?b:a)
+
+endmodule  

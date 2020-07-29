@@ -1,0 +1,10 @@
+module	FA	(Cin,	X,	Y,	S,	Cout);
+	input	Cin,	X,	Y;	
+	output	Cout,	S;	
+	assign	S	=	(~X|~Y|cin)&(~X|Y|cin)&(X|Y|cin);	
+	assign	Cout	=(Y|cin)&(X|Cin)&(X|Y);	
+	endmodule
+
+
+
+

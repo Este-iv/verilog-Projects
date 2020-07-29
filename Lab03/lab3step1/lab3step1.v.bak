@@ -1,0 +1,17 @@
+module farmer(F,C,G,W); 
+
+intput C,G,W; 
+
+output F; 
+
+not(Q,C); /* Q is C`*/ 
+not(R,G); /*R is G`*/
+not(T,W); /*T is W`*/
+
+and(X,Q,R);/*C`.G`*/
+and(Y,G,W);/*G.W*/
+and(Z,C,T); /*C,W`*/
+
+or(F,X,Y,Z);
+
+endmodule

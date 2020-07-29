@@ -1,0 +1,92 @@
+|8bit
+out <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+CLK => inst8.CLK
+CLK => inst7.CLK
+CLK => inst6.CLK
+CLK => inst5.CLK
+CLK => inst4.CLK
+CLK => inst3.CLK
+CLK => inst2.CLK
+CLK => inst1.CLK
+seed7 => 2to1:inst30.x
+enable => 2to1:inst30.s
+enable => 2to1:inst31.s
+enable => 2to1:inst32.s
+enable => 2to1:inst33.s
+enable => 2to1:inst34.s
+enable => 2to1:inst35.s
+enable => 2to1:inst36.s
+enable => 2to1:inst37.s
+seed6 => 2to1:inst31.x
+seed5 => 2to1:inst32.x
+seed4 => 2to1:inst33.x
+seed3 => 2to1:inst34.x
+seed2 => 2to1:inst35.x
+seed1 => 2to1:inst36.x
+seed0 => 2to1:inst37.x
+
+
+|8bit|2to1:inst30
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|8bit|2to1:inst31
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|8bit|2to1:inst32
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|8bit|2to1:inst33
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|8bit|2to1:inst34
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|8bit|2to1:inst35
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|8bit|2to1:inst36
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|8bit|2to1:inst37
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+

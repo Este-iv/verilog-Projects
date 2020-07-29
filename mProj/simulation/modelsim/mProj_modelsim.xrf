@@ -1,0 +1,13 @@
+vendor_name = ModelSim
+source_file = 1, U:/CPRE281/mProj/mProj.v
+source_file = 1, U:/CPRE281/mProj/Block1.bdf
+source_file = 1, U:/CPRE281/mProj/miniprj.bdf
+source_file = 1, U:/CPRE281/mProj/output_files/Chain3.cdf
+source_file = 1, U:/CPRE281/mProj/db/mProj.cbx.xml
+design_name = mProj
+instance = comp, \B~output , B~output, mProj, 1
+instance = comp, \Z~input , Z~input, mProj, 1
+instance = comp, \Y~input , Y~input, mProj, 1
+instance = comp, \X~input , X~input, mProj, 1
+instance = comp, \W~input , W~input, mProj, 1
+instance = comp, \B~0 , B~0, mProj, 1

@@ -1,0 +1,10 @@
+vendor_name = ModelSim
+source_file = 1, U:/CPRE281/bob/Block1.bdf
+source_file = 1, U:/CPRE281/bob/db/Block1.cbx.xml
+design_name = Block1
+instance = comp, \B~output , B~output, Block1, 1
+instance = comp, \X~input , X~input, Block1, 1
+instance = comp, \Y~input , Y~input, Block1, 1
+instance = comp, \W~input , W~input, Block1, 1
+instance = comp, \Z~input , Z~input, Block1, 1
+instance = comp, \inst7~0 , inst7~0, Block1, 1

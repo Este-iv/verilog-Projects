@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, U:/CPRE281/Final proj/4bitregister/4bitreg.bdf
+source_file = 1, U:/CPRE281/Final proj/4bitregister/2to1.bdf
+design_name = \4bitreg 
+instance = comp, \out0~output , out0~output, \4bitreg , 1
+instance = comp, \out1~output , out1~output, \4bitreg , 1
+instance = comp, \out2~output , out2~output, \4bitreg , 1
+instance = comp, \out3~output , out3~output, \4bitreg , 1
+instance = comp, \clock~input , clock~input, \4bitreg , 1
+instance = comp, \seed0~input , seed0~input, \4bitreg , 1
+instance = comp, \inst4~feeder , inst4~feeder, \4bitreg , 1
+instance = comp, \enable~input , enable~input, \4bitreg , 1
+instance = comp, \seed1~input , seed1~input, \4bitreg , 1
+instance = comp, \seed2~input , seed2~input, \4bitreg , 1
+instance = comp, \seed3~input , seed3~input, \4bitreg , 1

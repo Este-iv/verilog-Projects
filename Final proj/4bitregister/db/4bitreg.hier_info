@@ -1,0 +1,51 @@
+|4bitreg
+out0 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+clock => inst4.CLK
+clock => inst5.CLK
+clock => inst6.CLK
+clock => inst7.CLK
+seed0 => 2to1:inst2.x
+enable => 2to1:inst2.s
+enable => 2to1:inst.s
+enable => 2to1:inst1.s
+enable => 2to1:inst3.s
+out1 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+seed1 => 2to1:inst.x
+out2 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+seed2 => 2to1:inst1.x
+out3 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+seed3 => 2to1:inst3.x
+
+
+|4bitreg|2to1:inst2
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|4bitreg|2to1:inst
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|4bitreg|2to1:inst1
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+
+|4bitreg|2to1:inst3
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s => inst.IN0
+s => inst3.IN0
+y => inst.IN1
+x => inst1.IN0
+
+

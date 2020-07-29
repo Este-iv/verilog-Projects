@@ -1,0 +1,9 @@
+vendor_name = ModelSim
+source_file = 1, U:/CPRE281/Final proj/2to1/2to1.bdf
+source_file = 1, U:/CPRE281/Final proj/db/2to1.cbx.xml
+design_name = \2to1 
+instance = comp, \out~output , out~output, \2to1 , 1
+instance = comp, \x~input , x~input, \2to1 , 1
+instance = comp, \s~input , s~input, \2to1 , 1
+instance = comp, \y~input , y~input, \2to1 , 1
+instance = comp, \inst2~0 , inst2~0, \2to1 , 1
